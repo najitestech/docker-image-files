@@ -7,7 +7,7 @@ node {
         def customImage = docker.build("najite/tomcat")
         
         /* Push the container to the custom Registry */   
-        customImage.push("latest")
+        customImage.push('najite')
         
     }
     
