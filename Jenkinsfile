@@ -15,3 +15,9 @@ node {
             }
         }
     }  
+
+ node {
+    stage('Aqua MicroScanner') {
+        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
+    }
+  }  
