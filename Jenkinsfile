@@ -5,23 +5,13 @@ node {
    }
     
 node {
-    stage('Docker building image') {
+    stage('Building image & Push ') {
     docker.withRegistry('https://registry.hub.docker.com', 'Docker-ID') {   
         
         def customImage = docker.build("najite/tomcat")
+        
+        /* Push the container to the custom Registry */
+        customImage.push()
             }
         }
     }  
-        
-        
-        /* Push the container to the custom Registry */   
-node {
-    stage('Pushing image to docker registry') {
-        docker.withRegistry('https://registry.hub.docker.com', 'Docker-ID') {
-        //customImage.push()
-        
-       def customImage.push('latest')
-      }
-    
-    } 
-}
