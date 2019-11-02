@@ -23,4 +23,3 @@ RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWeb
 EXPOSE 8080
 
 CMD ["/bin/bash","/opt/tomcat/bin/catalina.sh", "run"]
-[root@manager1 tomcat-lab]#
