@@ -16,13 +16,19 @@ node {
         }
     }  
 
- node {
-    stage('Aqua MicroScanner') {
-        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
+node {
+   stage('Aqua MicroScanner') {
+       aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
     }
   }
-    post {
-        always {
-            archiveArtifacts artifacts: '**/*.min.*', onlyIfSuccessful: true
+ 
+node {
+    stage('Post Declarative') {
+        try {
+            sh 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
         }
     }
+}
