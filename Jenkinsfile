@@ -8,8 +8,7 @@ node {
         
         /* Push the container to the custom Registry */   
         //customImage.push()
-        docker push najite/tomcat:latest
-        
+        docker push "najite/tomcat:latest"   
     }
     
 }
