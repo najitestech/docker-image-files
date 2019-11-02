@@ -4,7 +4,7 @@ node {
     
     docker.withRegistry('https://registry.hub.docker.com', 'Docker-ID') {
         
-        def customImage = docker.build("miltonc/dockerwebapp")
+        def customImage = docker.build("najite/tomcat")
         
         /* Push the container to the custom Registry */
         
