@@ -17,7 +17,7 @@ node {
         /* Push the container to the custom Registry */   
 node {
     stage('Pushing image to docker registry') {
-        customImage.push()
+        //customImage.push()
         
         customImage.push('latest')
     }
