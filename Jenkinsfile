@@ -20,7 +20,7 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'Docker-ID') {
         //customImage.push()
         
-        customImage.push('latest')
+       def customImage.push('latest')
       }
     
     } 
