@@ -1,5 +1,5 @@
 #FROM centos:centos7
-FROM centos:7
+FROM centos:centos7.5.1804
 
 MAINTAINER kelvin.ikpeni@dcssp.com
 
