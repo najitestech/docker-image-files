@@ -28,5 +28,5 @@ node {
      }
     stage('Slack notified') {
         //slackSend color: 'good', iconEmoji: "message: 'Welcom to Slack !!!', channel: '#general-technologies'"
-        slackSend color: 'good', channel: 'general-technologies', message: 'Welcome to slack'
+        slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
     }
