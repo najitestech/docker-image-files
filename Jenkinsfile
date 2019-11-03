@@ -14,12 +14,9 @@ node {
     }  
 
 node {
-   stage('Aqua MicroScanner') {
-       aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
-      }
-   }
-   stage('Slack notified') {
-       slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', '${env.JOB_NAME} ${env.BUILD_NUMBER}'"
+    stage('Aqua MicroScanner') {
+        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
+       }
     }
     stage('Post Declarative') {
         try {
@@ -29,3 +26,6 @@ node {
             echo 'Something failed, I should sound the klaxons!'
            }
      }
+    stage('Slack notified') {
+        slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username"
+    }
