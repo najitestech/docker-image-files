@@ -17,9 +17,9 @@ node {
                 slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
           }
 
-            //else {
-            //    slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
-            //   }
+            else {
+                slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
+               }
         }
     } catch (err) {
         slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed!!!'
