@@ -12,19 +12,8 @@ node {
         customImage.push()
         }
     }  
-
-node {
-    stage('Aqua MicroScanner') {
-        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
-       }
-    }
     stage('Post Declarative') {
-        try {
-            sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'
-        }
-        catch (exc) {
-            echo 'Something failed, I should sound the klaxons!'
-           }
+        sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'    
      }
     stage('Slack notified') {
         if ('Post Declarative' == 'true') {
@@ -36,3 +25,11 @@ node {
             emailext body: 'Build Succeded', subject: 'docker-image-project', to: 'f6a2e3c8b8e0j6x8@najitestechworkspace.slack.com'
             }        
       }
+
+
+
+//node {
+//    stage('Aqua MicroScanner') {
+//        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
+//       }
+//    }
