@@ -25,7 +25,7 @@ node {
 node {
     stage('Post Declarative') {
         try {
-            sh 'exit 1'
+            sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
