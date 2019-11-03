@@ -12,7 +12,7 @@ node {
         customImage.push()
         }
     }  
-    stage('Post Declarative') {
+    stage('Date') {
         //sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'  
         sh 'date'
      }
