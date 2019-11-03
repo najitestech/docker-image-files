@@ -28,8 +28,8 @@ node {
      }
     stage('Slack notified') {
         slackSend color: 'good', 
-            iconEmoji:
+            iconEmoji: ,"
             message: 'Welcom to Slack !!!', 
             username: 'Najitestech', 
-            channel: '#general-technologies'
+            channel: '#general-technologies'"
     }
