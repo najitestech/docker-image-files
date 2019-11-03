@@ -27,7 +27,7 @@ node {
            }
      }
     stage('Slack notified') {
-        if (env.BRANCH_NAME == 'master') {
+        if (stage 'Full Build'  == 'SUCCESS') {
             slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
       }
 
