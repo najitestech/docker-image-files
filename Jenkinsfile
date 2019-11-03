@@ -1,5 +1,6 @@
 node {
     try {
+        slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Started'
         stage('Checkout SCM') {
         checkout scm
         }
@@ -36,6 +37,6 @@ node {
                } 
             }
         } catch (err) {
-        slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed!!!'
+        slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline "$(err)" Failed!!!'
         }
     }
