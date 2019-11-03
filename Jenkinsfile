@@ -1,5 +1,5 @@
 node {
-    try {
+    //try {
         stage('Checkout SCM') {
         checkout scm
         }
