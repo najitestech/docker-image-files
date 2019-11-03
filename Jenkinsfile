@@ -24,7 +24,7 @@ node {
 
 node {
    stage('Slack notified') {
-       slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username:"
+       slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', '${env.JOB_NAME} ${env.BUILD_NUMBER}'"
        }
     }
  
