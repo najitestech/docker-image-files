@@ -27,5 +27,5 @@ node {
            }
      }
     stage('Slack notified') {
-        slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username"
+        slackSend color: '#general-technologies', 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username"
     }
