@@ -13,7 +13,7 @@ node {
             }
         }  
         stage('Slack notified') {
-            if (){
+            if ('Post Declarative' == 'true') {
                 slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
           }
 
