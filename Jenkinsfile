@@ -23,7 +23,7 @@ node {
   }
 
 node {
-   stage('Aqua MicroScanner') {
+   stage('Slack notified') {
        slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username:"
        }
     }
