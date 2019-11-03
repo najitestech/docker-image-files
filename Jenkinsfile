@@ -21,6 +21,12 @@ node {
        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
     }
   }
+
+node {
+   stage('Aqua MicroScanner') {
+       slackSend color: 'good', iconEmoji: ", message: 'Welcom to Slack !!!', username:"
+       }
+    }
  
 node {
     stage('Post Declarative') {
