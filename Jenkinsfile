@@ -31,7 +31,7 @@ node {
             slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
       }
 
-        if ('1') {
+        else {
             slackSend color: 'bad', channel: 'general-technologies', message: 'docker-image-project pipeline Failed'
             }        
       }
