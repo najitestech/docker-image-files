@@ -13,7 +13,8 @@ node {
         }
     }  
     stage('Post Declarative') {
-        sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'    
+        //sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'  
+        sh 'date'
      }
     stage('Slack notified') {
         if ('Post Declarative' == 'true') {
