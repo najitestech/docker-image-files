@@ -27,11 +27,11 @@ node {
            }
      }
     stage('Slack notified') {
-        if ('Post Declarative' == '0') {
+        if ('Post Declarative' == '1') {
             slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
       }
 
         else {
-            slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed'
+            slackSend color: 'red', channel: 'general-technologies', message: 'docker-image-project pipeline Failed'
             }        
       }
