@@ -13,11 +13,11 @@ node {
             }
         }  
 
-    node {
-        stage('Aqua MicroScanner') {
-            aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
-           }
-        }
+    //node {
+    //    stage('Aqua MicroScanner') {
+    //        aquaMicroscanner imageName: 'najite/tomcat:latest', notCompliesCmd: 'exit 1', onDisallowed: 'ignore', outputFormat: 'html'
+    //       }
+    //    }
         stage('Post Declarative') {
             try {
                 sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'
