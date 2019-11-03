@@ -21,12 +21,11 @@ node {
     stage('Post Declarative') {
         try {
             sh 'rm -rf /var/lib/jenkins/workspace/* docker-image'
-            slackSend color: 'good', iconEmoji: "message: 'Welcom to Slack !!!', channel: '#general-technologies'"
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
            }
      }
-//    stage('Slack notified') {
-//        slackSend color: 'good', iconEmoji: "message: 'Welcom to Slack !!!', channel: '#general-technologies'"
-//    }
+    stage('Slack notified') {
+        slackSend color: 'good', iconEmoji: "message: 'Welcom to Slack !!!', channel: '#general-technologies'"
+    }
