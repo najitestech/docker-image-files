@@ -13,7 +13,7 @@ node {
             }
         }  
         stage('Slack notified') {
-            if ('Slack notified' == 'true') {
+            if ('Building image & Push' == 'true') {
                 slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
           }
 
