@@ -27,8 +27,8 @@ node {
            }
      }
     stage('Slack notified') {
-        if ('0') {
-            slackSendd color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
+        if ('1') {
+            slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
       }
 
         else {
