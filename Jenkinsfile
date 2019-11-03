@@ -1,5 +1,6 @@
 node {
     try {
+        slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Started'
         stage('Checkout SCM') {
         checkout scm
         }
@@ -18,7 +19,7 @@ node {
           }
 
             else {
-                slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
+                slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
                }
         }
     } catch (err) {
