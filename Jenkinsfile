@@ -13,14 +13,14 @@ node {
             }
         }  
         stage('Slack notified') {
-            if ('Post Declarative' == 'true') {
+            if {
                 slackSend color: 'good', channel: 'general-technologies', message: 'docker-image-project pipeline Succeded!!!'
           }
 
-            else {
-                slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
+            //else {
+            //    slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Secced'
                 //emailext body: 'Build Succeded', subject: 'docker-image-project', to: 'f6a2e3c8b8e0j6x8@najitestechworkspace.slack.com'
-            }
+            //}
         }
     } catch (err) {
         slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed!!!'
