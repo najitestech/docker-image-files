@@ -35,3 +35,4 @@ node {
                 slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Success'
                }        
         } 
+    }
