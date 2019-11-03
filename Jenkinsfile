@@ -23,7 +23,7 @@ node {
             }
         }
     } catch (err) {
-        slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed'
+        slackSend color: 'warning', channel: 'general-technologies', message: 'docker-image-project pipeline Failed!!!'
     }
 }
 
