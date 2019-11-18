@@ -1,0 +1,11 @@
+steps:
+- task: "KubernetesManifest@0"
+  displayName: "Deploy"
+  inputs:
+    kubernetesServiceConnection: "aks-cluster"
+    namespace: "aks-cluster"
+    manifests: "manifests/*"
+    containers: 'foobar/demo:$(tagVariable)'
+    imagePullSecrets: |
+      some-secret
+      some-other-secret
