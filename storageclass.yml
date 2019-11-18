@@ -1,0 +1,35 @@
+---
+apiVersion: storage.k8.io/v1
+kind: StorageClass
+metadata:
+  name: bronze
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  
+  ---
+apiVersion: storage.k8.io/v1
+kind: StorageClass
+metadata:
+  name: silver
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  
+  ---
+apiVersion: storage.k8.io/v1
+kind: StorageClass
+metadata:
+  name: gold
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  
+  ---
+apiVersion: storage.k8.io/v1
+kind: StorageClass
+metadata:
+  name: platnume
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
