@@ -1,16 +1,15 @@
 steps:
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag$VERSION','.']
-  env:
-  - 'VERSION=version v1.0'
+  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1','.']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag$VERSION']
+  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1']
   
-#Developers ONLY change
-#_VERSION: v1.0
+substitutions:
+    #Developers ONLY change
+    _VERSION: v1.0
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
