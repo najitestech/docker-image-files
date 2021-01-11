@@ -8,7 +8,7 @@ steps:
   args: ['push','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}']
   
 #Developers ONLY change
-_VERSION: v1.0
+#_VERSION: v1.0
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
