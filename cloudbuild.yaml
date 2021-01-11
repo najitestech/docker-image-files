@@ -1,14 +1,15 @@
 steps:
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${_VERSION}','.']
+  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}','.']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/quickstart-image:${_VERSION}']
+  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
   
 substitutions:
     #Developers ONLY change
+    _IMAGE: tomcat
     _VERSION: v1.0
 
 #- name: 'gcr.io/cloud-builders/docker'
