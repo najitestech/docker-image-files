@@ -1,11 +1,11 @@
 steps:
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}','.']
+  args: ['build','-t','gcr.io/${_PROJECT}/${_CONTAINERNAME}:tag1','.']
 
 #Push the image  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}']
+  args: ['push','gcr.io/${_PROJECT}/${_CONTAINERNAME}:tag1']
   
 #Developers ONLY change
 #_VERSION: v1.0
