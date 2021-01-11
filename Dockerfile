@@ -10,7 +10,8 @@ RUN dnf install -y tar && \
     dnf install -y vim
 
 WORKDIR /opt/tomcat
-RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
+#RUN curl -O https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.47/bin/apache-tomcat-8.5.47.tar.gz
+RUN curl -O https://mirrors.gigenet.com/apache/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.tar.gz
 #RUN tar xvzf apache-tomcat*.tar.gz
 #RUN mv apache-tomcat-8.5.47/* /opt/tomcat/.
 RUN yum -y install java
