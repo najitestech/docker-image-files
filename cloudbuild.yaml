@@ -7,18 +7,28 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
   
-#Update the container image using kubectl set
-- name: 'gcr.io/cloud-builders/kubectl'
-  args:
-  - 'set'
-  - 'image'
-  - 'deployment/${_DEPLOYMENTNAME}'
-  - '${_CONTAINERNAME}=gcr.io/${_PROJECT}/${_CONTAINERNAME}:1.17'
-  env:
-  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
+##Update the container image using kubectl set
+#- name: 'gcr.io/cloud-builders/kubectl'
+#  args:
+#  - 'set'
+#  - 'image'
+#  - 'deployment/${_DEPLOYMENTNAME}'
+#  - '${_CONTAINERNAME}=gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}'
+#  env:
+#  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
+#  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
   
 substitutions:
+    #GCP Specific configuration. Please DON'T change anything
+    _PROJECT: test-project-20200
+    _ZONE: us-central1-a
+    _GKE_CLUSTER: ntek-cluster
+    
+    #Repository Specific configuration. DevOps can change this settings
+    _DEPLOYMENTNAME: tomcat-web-service
+    _CONTAINERNAME: ${_IMAGE}-imag   
+    _REPO_NAME: docker-image-files
+    
     #Developers ONLY change
     _IMAGE: tomcat
     _VERSION: v1.0
