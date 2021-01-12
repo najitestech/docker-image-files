@@ -26,7 +26,7 @@ substitutions:
     
     #Repository Specific configuration. DevOps can change this settings
     _DEPLOYMENTNAME: tomcat-web-service
-    _CONTAINERNAME: ${_IMAGE}-image   
+    _CONTAINERNAME: tomcat-web-service   
     _REPO_NAME: docker-image-files
     
     #Developers ONLY change
