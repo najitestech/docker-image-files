@@ -22,7 +22,6 @@ substitutions:
     #Developers ONLY change
     _IMAGE: tomcat
     _VERSION: v1.0
-    _KUBECTLVERSION: 1.17
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
