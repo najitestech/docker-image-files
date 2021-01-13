@@ -35,7 +35,7 @@ substitutions:
     _GKE_CLUSTER: ntek-cluster
     
     #Repository Specific configuration. DevOps can change this settings
-    _DEPLOYMENTNAME: ntek-cluster
+    _DEPLOYMENTNAME: tomcat
     _CONTAINERNAME: tomcat   
     _REPO_NAME: docker-image-files
     
