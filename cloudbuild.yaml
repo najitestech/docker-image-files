@@ -23,7 +23,7 @@ steps:
   args:
   - run
   - --filename=deployment-tomcat.yml
-  - --image=gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}
+  - --image=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}
   - --location=${_ZONE}
   - --cluster=${_GKE_CLUSTER}
   
