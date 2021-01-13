@@ -13,7 +13,6 @@ steps:
   - 'set'
   - 'image'
   - 'deployment/${_DEPLOYMENTNAME}'
-#  - '${_CONTAINERNAME}=gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}'
   - '${_CONTAINERNAME}=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
@@ -41,7 +40,7 @@ substitutions:
     
     #Developers ONLY change
     _IMAGE: tomcat
-    _VERSION: v2.0
+    _VERSION: v1.0
 
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
