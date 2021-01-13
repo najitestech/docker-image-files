@@ -32,8 +32,8 @@ spec:
   ports:
   - protocol: "TCP"
     port: 8080
-    targetPort: ""
+    targetPort: "8080"
   selector:
     app: "tomcat"
-  type: "NodePort"
+  type: "LoadBalancer"
   loadBalancerIP: "" 
