@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'bash'
-  args: ['hostname']
+  args: ['uname -a']
  
 #steps: 
 ##Build the image 
