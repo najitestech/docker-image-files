@@ -2,7 +2,6 @@ steps:
 steps:
 - name: 'bash'
   args:
-  - run
   - --['uname']
  
 #steps: 
