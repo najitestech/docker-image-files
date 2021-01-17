@@ -1,6 +1,6 @@
 steps:
-- name: gsutil mb gs://ntek-cluster
-  args:
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['gsutil mb gs://ntek-cluster', '.']
  
 #steps: 
 ##Build the image 
