@@ -1,6 +1,17 @@
 steps:
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['gsutil mb gs://ntek-cluster', '.']
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-eEuo'
+  - 'pipefail'
+  - '-c'
+  - |-
+    if (( $(date '+%-e') % 2 )); then
+      echo "today is an odd day"
+    else
+      echo "today is an odd day, with an even number"
+    fi
  
 #steps: 
 ##Build the image 
