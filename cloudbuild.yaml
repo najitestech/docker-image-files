@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'bash'
-  args: ['cat /etc/os-release']
+  args: ['cal']
  
 #steps: 
 ##Build the image 
