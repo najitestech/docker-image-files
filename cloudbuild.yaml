@@ -1,6 +1,6 @@
 steps:
 - name: gsutil mb gs://ntek-cluster
-  args: gsutil mb gs://ntek-cluster
+  args:
  
 #steps: 
 ##Build the image 
