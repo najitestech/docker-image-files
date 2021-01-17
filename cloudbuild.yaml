@@ -1,7 +1,9 @@
 steps:
 steps:
 - name: 'bash'
-  args: ['uname']
+  args:
+  - run
+  - --['uname']
  
 #steps: 
 ##Build the image 
