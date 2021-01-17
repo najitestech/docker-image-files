@@ -1,4 +1,7 @@
-#steps:
+steps:
+- name: gsutil mb gs://ntek-cluster
+  args: gsutil mb gs://ntek-cluster#steps:
+  
 ##Build the image 
 #- name: 'gcr.io/cloud-builders/docker'
 #  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}','.']
