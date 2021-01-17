@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'bash'
-  args: ['cal']
+  args: ['hostname']
  
 #steps: 
 ##Build the image 
