@@ -2,7 +2,7 @@ steps:
 steps:
 - name: 'centos'
   args: ['pwd']
-- name: foo
+- name: centos
   args: ['ls ']
  
   
