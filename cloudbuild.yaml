@@ -1,7 +1,7 @@
 steps:
 steps:
-- name: 'bash'
-  args: ['sudo apt-get install google-cloud-sdk-app-engine-java']
+- name: 'centos'
+  args: ['uname']
   
 #- name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
