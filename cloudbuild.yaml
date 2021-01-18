@@ -2,7 +2,7 @@ steps:
 steps:
 - name: 'centos'
   args: ['pwd']
-- name: 'Check working directory'
+- name: Check working directory
   args: ['ls ']
  
   
