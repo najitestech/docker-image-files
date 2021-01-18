@@ -1,6 +1,6 @@
 steps:
 steps:
-- name: 'huginn'
+- name: 'nginx'
   args: ['pwd']
  
   
