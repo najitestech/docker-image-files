@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'centos'
-  args: ['cat /etc/os-release']
+  args: ['ls /etc']
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
