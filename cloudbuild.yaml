@@ -4,9 +4,7 @@ steps:
   args: 
   - '-c'
   - |
-    ['pwd']
-    ['ls']
-    ['uname']
+    pwd
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
