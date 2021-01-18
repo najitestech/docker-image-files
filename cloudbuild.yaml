@@ -1,11 +1,11 @@
 steps:
 steps:
 - name: 'bash'
-  args: ['uname']
+  args: ['gsutil mb -p test-project-20200 -c STANDARD -l us-central-a -b on gs://ntek-state-bucket'] #['uname']
   
 - name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
-  args: ['gsutil mb -p test-project-20200 -c STANDARD -l us-central-a -b on gs://ntek-state-bucket']
+  #args: ['gsutil mb -p test-project-20200 -c STANDARD -l us-central-a -b on gs://ntek-state-bucket']
  
 #steps: 
 ##Build the image 
