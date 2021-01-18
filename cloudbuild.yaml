@@ -1,7 +1,11 @@
 steps:
 steps:
 - name: 'ansible/awx_web'
-  args: ['ansible --version']
+  args: ['uname']
+  
+#Push the image  
+- name: 'ansible/awx_web'
+  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
@@ -37,20 +41,20 @@ steps:
 #  - --location=${_ZONE}
 #  - --cluster=${_GKE_CLUSTER}
   
-#substitutions:
-#    #GCP Specific configuration. Please DON'T change anything
-#    _PROJECT: test-project-20200
-#    _ZONE: us-central1-a
-#    _GKE_CLUSTER: ntek-cluster
+substitutions:
+    #GCP Specific configuration. Please DON'T change anything
+    _PROJECT: test-project-20200
+    _ZONE: us-central1-a
+    _GKE_CLUSTER: ntek-cluster
     
-#    #Repository Specific configuration. DevOps can change this settings
-#    _DEPLOYMENTNAME: tomcat
-#    _CONTAINERNAME: tomcat   
-#    _REPO_NAME: docker-image-files
+    #Repository Specific configuration. DevOps can change this settings
+    _DEPLOYMENTNAME: tomcat
+    _CONTAINERNAME: tomcat   
+    _REPO_NAME: docker-image-files
     
-#    #Developers ONLY change
-#    _IMAGE: tomcat
-#    _VERSION: v1.0
+    #Developers ONLY change
+    _IMAGE: tomcat
+    _VERSION: v1.0
 
 ##- name: 'gcr.io/cloud-builders/docker'
 ##  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
