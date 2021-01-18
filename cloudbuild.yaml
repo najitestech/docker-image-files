@@ -1,6 +1,6 @@
 steps:
 steps:
-- name: 'huginn/hunginn'
+- name: 'huginn'
   args: ['pwd']
  
   
