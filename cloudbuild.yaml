@@ -2,7 +2,7 @@ steps:
 steps:
 - name: 'bash'
   args: ['uname'] \
-  ['cal'[
+  ['cal']
   
 #- name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
