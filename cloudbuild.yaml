@@ -9,7 +9,7 @@ steps:
   
 #Push the image  
 - name: 'ansible/awx_web'
-  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
+  args: ['push','gcr.io/$PROJECT_ID/kops-state-bucket/${_IMAGE}-image:${_VERSION}']
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
