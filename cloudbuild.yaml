@@ -1,49 +1,31 @@
-steps:
-steps:
-- name: 'ansible/awx_web'
-  args: ['uname']
-  
+steps: 
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','gcr.io/$PROJECT_ID/kops-state-bucket/${_IMAGE}-image:${_VERSION}','.']
-  
+  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}','.']
+
 #Push the image  
-- name: 'ansible/awx_web'
-  args: ['push','gcr.io/$PROJECT_ID/kops-state-bucket/${_IMAGE}-image:${_VERSION}']
- 
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
   
-#- name: 'gcr.io/cloud-builders/gsutil'
-  #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
-  #args: ['gsutil mb -p test-project-20200 -c STANDARD -l us-central-a -b on gs://ntek-state-bucket']
- 
-#steps: 
-##Build the image 
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['build','-t','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}','.']
+#Update the container image using kubectl set
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'set'
+  - 'image'
+  - 'deployment/${_DEPLOYMENTNAME}'
+  - '${_CONTAINERNAME}=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
 
-##Push the image  
-#- name: 'gcr.io/cloud-builders/docker'
-#  args: ['push','gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}']
-  
-##Update the container image using kubectl set
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  args:
-#  - 'set'
-#  - 'image'
-#  - 'deployment/${_DEPLOYMENTNAME}'
-#  - '${_CONTAINERNAME}=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}'
-#  env:
-#  - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
-#  - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
-
-## deploy container image to GKE
-#- name: "gcr.io/cloud-builders/gke-deploy"
-#  args:
-#  - run
-#  - --filename=deployment-tomcat.yml
-#  - --image=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}
-#  - --location=${_ZONE}
-#  - --cluster=${_GKE_CLUSTER}
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=deployment-tomcat.yml
+  - --image=gcr.io/$PROJECT_ID/quickstart-docker-repo/${_IMAGE}-image:${_VERSION}
+  - --location=${_ZONE}
+  - --cluster=${_GKE_CLUSTER}
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
@@ -57,10 +39,10 @@ substitutions:
     _REPO_NAME: docker-image-files
     
     #Developers ONLY change
-    _IMAGE: ansible_awx
+    _IMAGE: tomcat
     _VERSION: v1.0
 
-##- name: 'gcr.io/cloud-builders/docker'
-##  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
-##images:
-##- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1', '.' ]
+#images:
+#- 'us-central1-docker.pkg.dev/$PROJECT_ID/quickstart-docker-repo/quickstart-image:tag1'
