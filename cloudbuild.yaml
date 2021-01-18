@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'centos'
-  args: ['uname']
+  args: ['PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/bin']
   
 #- name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
