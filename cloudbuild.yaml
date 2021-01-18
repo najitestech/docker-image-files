@@ -1,8 +1,10 @@
 steps:
 steps:
 - name: 'bash'
-  args:
-  - ['uname']
+  args: ['uname']
+  
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '-r', './Dockerfile', 'gs://kops-service-bucket/Dockerfile']  
  
 #steps: 
 ##Build the image 
