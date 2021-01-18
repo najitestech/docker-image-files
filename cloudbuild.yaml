@@ -1,7 +1,7 @@
 steps:
 steps:
 - name: 'ansible/awx_web'
-  args: ['pwd']
+  args: ['ansible --version']
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
