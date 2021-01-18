@@ -1,6 +1,6 @@
 steps:
 steps:
-- name: 'nginx'
+- name: 'ansible/awx_web'
   args: ['pwd']
  
   
