@@ -3,6 +3,7 @@ steps:
 - name: 'centos'
   args: ['pwd']
   args: ['ls']
+  args: ['uname']
  
   
 #- name: 'gcr.io/cloud-builders/gsutil'
