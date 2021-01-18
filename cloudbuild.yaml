@@ -1,6 +1,6 @@
 steps:
 steps:
-- name: 'centos:latest'
+- name: 'centos'
   args: ['yum update -y']
   
 #- name: 'gcr.io/cloud-builders/gsutil'
