@@ -4,7 +4,7 @@ steps:
   args: ['uname']
   
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r', './Dockerfile', 'gs://kops-service-bucket/Dockerfile']  
+  args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile']  
  
 #steps: 
 ##Build the image 
