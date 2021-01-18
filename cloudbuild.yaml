@@ -2,6 +2,9 @@ steps:
 steps:
 - name: 'centos'
   args: ['pwd']
+- name: 'Check working directory'
+  args: ['ls ']
+ 
   
 #- name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
