@@ -5,7 +5,7 @@ steps:
   
 - name: 'gcr.io/cloud-builders/gsutil'
   #args: ['cp', '-r', './Dockerfile', 'gs://kops-state-bucket/Dockerfile'] 
-  args: ['gsutil mb gs://ntek-state-bucket']
+  args: ['gsutil mb -p test-project-20200 -b on gs://ntek-state-bucket']
  
 #steps: 
 ##Build the image 
